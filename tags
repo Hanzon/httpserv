@@ -4,109 +4,70 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-LISTENQ	main.cpp	2;"	kind:macro	file:
-SERV_PORT	main.cpp	1;"	kind:macro	file:
-accepted	reply.h	/^		accepted = 202,$/;"	kind:enumerator	enum:reply::status_type
-bad_gateway	reply.h	/^		bad_gateway = 502,$/;"	kind:enumerator	enum:reply::status_type
-bad_request	reply.h	/^		bad_request = 400,$/;"	kind:enumerator	enum:reply::status_type
-content	reply.h	/^	std::string content;$/;"	kind:member	class:reply	access:private
-created	reply.h	/^		created = 201,$/;"	kind:enumerator	enum:reply::status_type
-forbidden	reply.h	/^		forbidden = 403,$/;"	kind:enumerator	enum:reply::status_type
-getreq	request_parser.cpp	/^request request_parser::getreq()$/;"	kind:function	class:request_parser	signature:()
-getreq	request_parser.h	/^	request getreq();$/;"	kind:prototype	class:request_parser	access:public	signature:()
-header	request.h	/^struct header$/;"	kind:struct
-header::name	request.h	/^	string name;$/;"	kind:member	struct:header	access:public
-header::value	request.h	/^	string value;$/;"	kind:member	struct:header	access:public
-headers	reply.h	/^	std::vector<header> headers;$/;"	kind:member	class:reply	access:private
-headers	request.h	/^	vector<header> headers;$/;"	kind:member	struct:request	access:public
-internal_server_error	reply.h	/^		internal_server_error = 500,$/;"	kind:enumerator	enum:reply::status_type
-m_docroot	request_handler.h	/^	string m_docroot;$/;"	kind:member	class:request_handler	access:private
-main	main.cpp	/^int main()$/;"	kind:function	signature:()
-method	request.h	/^	string method;$/;"	kind:member	struct:request	access:public
-moved_permanently	reply.h	/^		moved_permanently = 301,$/;"	kind:enumerator	enum:reply::status_type
-moved_temporarily	reply.h	/^		moved_temporarily = 302,$/;"	kind:enumerator	enum:reply::status_type
-name	request.h	/^	string name;$/;"	kind:member	struct:header	access:public
-no_content	reply.h	/^		no_content = 204,$/;"	kind:enumerator	enum:reply::status_type
-not_found	reply.h	/^		not_found = 404,$/;"	kind:enumerator	enum:reply::status_type
-not_implemented	reply.h	/^		not_implemented = 501,$/;"	kind:enumerator	enum:reply::status_type
-not_modified	reply.h	/^		not_modified = 304,$/;"	kind:enumerator	enum:reply::status_type
-ok	reply.h	/^		ok = 200,$/;"	kind:enumerator	enum:reply::status_type
-parse	request_parser.cpp	/^bool request_parser::parse(string packet)$/;"	kind:function	class:request_parser	signature:(string packet)
-parse	request_parser.h	/^	bool parse(string);$/;"	kind:prototype	class:request_parser	access:public	signature:(string)
-parse_reqheader	request_parser.cpp	/^bool request_parser::parse_reqheader(string header)$/;"	kind:function	class:request_parser	signature:(string header)
-parse_reqheader	request_parser.h	/^	bool parse_reqheader(string);$/;"	kind:prototype	class:request_parser	access:private	signature:(string)
-parse_reqline	request_parser.cpp	/^bool request_parser::parse_reqline(string statu_line)$/;"	kind:function	class:request_parser	signature:(string statu_line)
-parse_reqline	request_parser.h	/^	bool parse_reqline(string);$/;"	kind:prototype	class:request_parser	access:private	signature:(string)
-produre_reply	request_handler.cpp	/^void request_handler::produre_reply(const request& req, reply& rep)$/;"	kind:function	class:request_handler	signature:(const request& req, reply& rep)
-produre_reply	request_handler.h	/^	void produre_reply(const request& req, reply& rep);$/;"	kind:prototype	class:request_handler	access:public	signature:(const request& req, reply& rep)
-reply	reply.h	/^class reply$/;"	kind:class
-reply::accepted	reply.h	/^		accepted = 202,$/;"	kind:enumerator	enum:reply::status_type
-reply::bad_gateway	reply.h	/^		bad_gateway = 502,$/;"	kind:enumerator	enum:reply::status_type
-reply::bad_request	reply.h	/^		bad_request = 400,$/;"	kind:enumerator	enum:reply::status_type
-reply::content	reply.h	/^	std::string content;$/;"	kind:member	class:reply	access:private
-reply::created	reply.h	/^		created = 201,$/;"	kind:enumerator	enum:reply::status_type
-reply::forbidden	reply.h	/^		forbidden = 403,$/;"	kind:enumerator	enum:reply::status_type
-reply::headers	reply.h	/^	std::vector<header> headers;$/;"	kind:member	class:reply	access:private
-reply::internal_server_error	reply.h	/^		internal_server_error = 500,$/;"	kind:enumerator	enum:reply::status_type
-reply::moved_permanently	reply.h	/^		moved_permanently = 301,$/;"	kind:enumerator	enum:reply::status_type
-reply::moved_temporarily	reply.h	/^		moved_temporarily = 302,$/;"	kind:enumerator	enum:reply::status_type
-reply::no_content	reply.h	/^		no_content = 204,$/;"	kind:enumerator	enum:reply::status_type
-reply::not_found	reply.h	/^		not_found = 404,$/;"	kind:enumerator	enum:reply::status_type
-reply::not_implemented	reply.h	/^		not_implemented = 501,$/;"	kind:enumerator	enum:reply::status_type
-reply::not_modified	reply.h	/^		not_modified = 304,$/;"	kind:enumerator	enum:reply::status_type
-reply::ok	reply.h	/^		ok = 200,$/;"	kind:enumerator	enum:reply::status_type
-reply::service_unavailable	reply.h	/^		service_unavailable = 503$/;"	kind:enumerator	enum:reply::status_type
-reply::status	reply.h	/^	}status;$/;"	kind:member	class:reply	typeref:enum:reply::status_type	access:private
-reply::status_type	reply.h	/^	enum status_type$/;"	kind:enum	class:reply	access:private
-reply::to_buffers	reply.cpp	/^string reply::to_buffers()$/;"	kind:function	class:reply	signature:()
-reply::to_buffers	reply.h	/^	string to_buffers();$/;"	kind:prototype	class:reply	access:public	signature:()
-reply::to_reply_content	reply.cpp	/^string reply::to_reply_content(reply::status_type status)$/;"	kind:function	class:reply	signature:(reply::status_type status)
-reply::to_reply_content	reply.h	/^	string to_reply_content(reply::status_type status);$/;"	kind:prototype	class:reply	access:private	signature:(reply::status_type status)
-reply::to_string	reply.cpp	/^string reply::to_string(reply::status_type status)$/;"	kind:function	class:reply	signature:(reply::status_type status)
-reply::to_string	reply.h	/^	string to_string(reply::status_type status);$/;"	kind:prototype	class:reply	access:private	signature:(reply::status_type status)
-reply::unauthorized	reply.h	/^		unauthorized = 401,$/;"	kind:enumerator	enum:reply::status_type
-req	request_parser.h	/^	request req;$/;"	kind:member	class:request_parser	access:private
-request	request.h	/^struct request$/;"	kind:struct
-request::headers	request.h	/^	vector<header> headers;$/;"	kind:member	struct:request	access:public
-request::method	request.h	/^	string method;$/;"	kind:member	struct:request	access:public
-request::url	request.h	/^	string url;$/;"	kind:member	struct:request	access:public
-request::version	request.h	/^	string version;$/;"	kind:member	struct:request	access:public
-request_handler	request_handler.cpp	/^request_handler::request_handler(const string& docroot):m_docroot(docroot)$/;"	kind:function	class:request_handler	signature:(const string& docroot)
-request_handler	request_handler.h	/^	explicit request_handler(const string& docroot);$/;"	kind:prototype	class:request_handler	access:public	signature:(const string& docroot)
-request_handler	request_handler.h	/^class request_handler$/;"	kind:class
-request_handler::m_docroot	request_handler.h	/^	string m_docroot;$/;"	kind:member	class:request_handler	access:private
-request_handler::produre_reply	request_handler.cpp	/^void request_handler::produre_reply(const request& req, reply& rep)$/;"	kind:function	class:request_handler	signature:(const request& req, reply& rep)
-request_handler::produre_reply	request_handler.h	/^	void produre_reply(const request& req, reply& rep);$/;"	kind:prototype	class:request_handler	access:public	signature:(const request& req, reply& rep)
-request_handler::request_handler	request_handler.cpp	/^request_handler::request_handler(const string& docroot):m_docroot(docroot)$/;"	kind:function	class:request_handler	signature:(const string& docroot)
-request_handler::request_handler	request_handler.h	/^	explicit request_handler(const string& docroot);$/;"	kind:prototype	class:request_handler	access:public	signature:(const string& docroot)
-request_handler::url_decode	request_handler.cpp	/^bool request_handler::url_decode(const string& in, string& out)$/;"	kind:function	class:request_handler	signature:(const string& in, string& out)
-request_handler::url_decode	request_handler.h	/^	static bool url_decode(const string& in, string& out);$/;"	kind:prototype	class:request_handler	access:private	signature:(const string& in, string& out)
-request_parser	request_parser.h	/^class request_parser$/;"	kind:class
-request_parser::getreq	request_parser.cpp	/^request request_parser::getreq()$/;"	kind:function	class:request_parser	signature:()
-request_parser::getreq	request_parser.h	/^	request getreq();$/;"	kind:prototype	class:request_parser	access:public	signature:()
-request_parser::parse	request_parser.cpp	/^bool request_parser::parse(string packet)$/;"	kind:function	class:request_parser	signature:(string packet)
-request_parser::parse	request_parser.h	/^	bool parse(string);$/;"	kind:prototype	class:request_parser	access:public	signature:(string)
-request_parser::parse_reqheader	request_parser.cpp	/^bool request_parser::parse_reqheader(string header)$/;"	kind:function	class:request_parser	signature:(string header)
-request_parser::parse_reqheader	request_parser.h	/^	bool parse_reqheader(string);$/;"	kind:prototype	class:request_parser	access:private	signature:(string)
-request_parser::parse_reqline	request_parser.cpp	/^bool request_parser::parse_reqline(string statu_line)$/;"	kind:function	class:request_parser	signature:(string statu_line)
-request_parser::parse_reqline	request_parser.h	/^	bool parse_reqline(string);$/;"	kind:prototype	class:request_parser	access:private	signature:(string)
-request_parser::req	request_parser.h	/^	request req;$/;"	kind:member	class:request_parser	access:private
-request_parser::reset	request_parser.cpp	/^void request_parser::reset()$/;"	kind:function	class:request_parser	signature:()
-request_parser::reset	request_parser.h	/^	void reset();$/;"	kind:prototype	class:request_parser	access:public	signature:()
-reset	request_parser.cpp	/^void request_parser::reset()$/;"	kind:function	class:request_parser	signature:()
-reset	request_parser.h	/^	void reset();$/;"	kind:prototype	class:request_parser	access:public	signature:()
-service_unavailable	reply.h	/^		service_unavailable = 503$/;"	kind:enumerator	enum:reply::status_type
-status	reply.h	/^	}status;$/;"	kind:member	class:reply	typeref:enum:reply::status_type	access:private
-status_type	reply.h	/^	enum status_type$/;"	kind:enum	class:reply	access:private
-to_buffers	reply.cpp	/^string reply::to_buffers()$/;"	kind:function	class:reply	signature:()
-to_buffers	reply.h	/^	string to_buffers();$/;"	kind:prototype	class:reply	access:public	signature:()
-to_reply_content	reply.cpp	/^string reply::to_reply_content(reply::status_type status)$/;"	kind:function	class:reply	signature:(reply::status_type status)
-to_reply_content	reply.h	/^	string to_reply_content(reply::status_type status);$/;"	kind:prototype	class:reply	access:private	signature:(reply::status_type status)
-to_string	reply.cpp	/^string reply::to_string(reply::status_type status)$/;"	kind:function	class:reply	signature:(reply::status_type status)
-to_string	reply.h	/^	string to_string(reply::status_type status);$/;"	kind:prototype	class:reply	access:private	signature:(reply::status_type status)
-unauthorized	reply.h	/^		unauthorized = 401,$/;"	kind:enumerator	enum:reply::status_type
-url	request.h	/^	string url;$/;"	kind:member	struct:request	access:public
-url_decode	request_handler.cpp	/^bool request_handler::url_decode(const string& in, string& out)$/;"	kind:function	class:request_handler	signature:(const string& in, string& out)
-url_decode	request_handler.h	/^	static bool url_decode(const string& in, string& out);$/;"	kind:prototype	class:request_handler	access:private	signature:(const string& in, string& out)
-value	request.h	/^	string value;$/;"	kind:member	struct:header	access:public
-version	request.h	/^	string version;$/;"	kind:member	struct:request	access:public
+LISTENQ	main.cpp	2;"	d	file:
+SERV_PORT	main.cpp	1;"	d	file:
+accepted	reply.h	/^		accepted = 202,$/;"	e	enum:reply::status_type
+bad_gateway	reply.h	/^		bad_gateway = 502,$/;"	e	enum:reply::status_type
+bad_request	reply.h	/^		bad_request = 400,$/;"	e	enum:reply::status_type
+content	reply.h	/^	string content;$/;"	m	class:reply
+created	reply.h	/^		created = 201,$/;"	e	enum:reply::status_type
+forbidden	reply.h	/^		forbidden = 403,$/;"	e	enum:reply::status_type
+getreq	request_parser.cpp	/^request request_parser::getreq()$/;"	f	class:request_parser
+getreq	request_parser.h	/^	request getreq();$/;"	p	class:request_parser
+header	request.h	/^struct header$/;"	s
+headers	reply.h	/^	vector<header> headers;$/;"	m	class:reply
+headers	request.h	/^	vector<header> headers;$/;"	m	struct:request
+internal_server_error	reply.h	/^		internal_server_error = 500,$/;"	e	enum:reply::status_type
+m_docroot	request_handler.h	/^	string m_docroot;$/;"	m	class:request_handler
+main	main.cpp	/^int main()$/;"	f
+main	reply.cpp	/^int main()$/;"	f
+method	request.h	/^	string method;$/;"	m	struct:request
+moved_permanently	reply.h	/^		moved_permanently = 301,$/;"	e	enum:reply::status_type
+moved_temporarily	reply.h	/^		moved_temporarily = 302,$/;"	e	enum:reply::status_type
+name	request.h	/^	string name;$/;"	m	struct:header
+no_content	reply.h	/^		no_content = 204,$/;"	e	enum:reply::status_type
+not_found	reply.h	/^		not_found = 404,$/;"	e	enum:reply::status_type
+not_implemented	reply.h	/^		not_implemented = 501,$/;"	e	enum:reply::status_type
+not_modified	reply.h	/^		not_modified = 304,$/;"	e	enum:reply::status_type
+ok	reply.h	/^		ok = 200,$/;"	e	enum:reply::status_type
+parse	request_parser.cpp	/^bool request_parser::parse(string packet)$/;"	f	class:request_parser
+parse	request_parser.h	/^	bool parse(string);$/;"	p	class:request_parser
+parse_reqheader	request_parser.cpp	/^bool request_parser::parse_reqheader(string header)$/;"	f	class:request_parser
+parse_reqheader	request_parser.h	/^	bool parse_reqheader(string);$/;"	p	class:request_parser
+parse_reqline	request_parser.cpp	/^bool request_parser::parse_reqline(string statu_line)$/;"	f	class:request_parser
+parse_reqline	request_parser.h	/^	bool parse_reqline(string);$/;"	p	class:request_parser
+produre_reply	request_handler.cpp	/^void request_handler::produre_reply(const request& req, reply& rep)$/;"	f	class:request_handler
+produre_reply	request_handler.h	/^	void produre_reply(const request& req, reply& rep);$/;"	p	class:request_handler
+reply	reply.h	/^class reply$/;"	c
+req	request_parser.h	/^	request req;$/;"	m	class:request_parser
+request	request.h	/^struct request$/;"	s
+request_handler	request_handler.cpp	/^request_handler::request_handler(const string& docroot):m_docroot(docroot)$/;"	f	class:request_handler
+request_handler	request_handler.h	/^	explicit request_handler(const string& docroot);$/;"	p	class:request_handler
+request_handler	request_handler.h	/^class request_handler$/;"	c
+request_parser	request_parser.h	/^class request_parser$/;"	c
+reset	reply.h	/^	void reset();$/;"	p	class:reply
+reset	request_parser.cpp	/^void request_parser::reset()$/;"	f	class:request_parser
+reset	request_parser.h	/^	void reset();$/;"	p	class:request_parser
+service_unavailable	reply.h	/^		service_unavailable = 503$/;"	e	enum:reply::status_type
+set_content	reply.cpp	/^void reply::set_content(const string content)$/;"	f	class:reply
+set_content	reply.h	/^	void set_content(const string );$/;"	p	class:reply
+set_headers	reply.cpp	/^void reply::set_headers(const vector<header> headers)$/;"	f	class:reply
+set_headers	reply.h	/^	void set_headers(const vector<header> );$/;"	p	class:reply
+set_status	reply.cpp	/^void reply::set_status(const status_type status)$/;"	f	class:reply
+set_status	reply.h	/^	void set_status(const status_type);$/;"	p	class:reply
+status	reply.h	/^	}status;$/;"	m	class:reply	typeref:enum:reply::status_type
+status_to_string	reply.cpp	/^string reply::status_to_string()$/;"	f	class:reply
+status_to_string	reply.h	/^	string status_to_string();$/;"	p	class:reply
+status_type	reply.h	/^	enum status_type$/;"	g	class:reply
+to_buffers	reply.cpp	/^string reply::to_buffers()$/;"	f	class:reply
+to_buffers	reply.h	/^	string to_buffers();$/;"	p	class:reply
+to_reply_content	reply.cpp	/^void reply::to_reply_content()$/;"	f	class:reply
+to_reply_content	reply.h	/^	void to_reply_content();$/;"	p	class:reply
+to_reply_headers	reply.cpp	/^void reply::to_reply_headers()$/;"	f	class:reply
+to_reply_headers	reply.h	/^	void to_reply_headers();$/;"	p	class:reply
+unauthorized	reply.h	/^		unauthorized = 401,$/;"	e	enum:reply::status_type
+url	request.h	/^	string url;$/;"	m	struct:request
+url_decode	request_handler.cpp	/^bool request_handler::url_decode(const string& in, string& out)$/;"	f	class:request_handler
+url_decode	request_handler.h	/^	static bool url_decode(const string& in, string& out);$/;"	p	class:request_handler
+value	request.h	/^	string value;$/;"	m	struct:header
+version	request.h	/^	string version;$/;"	m	struct:request

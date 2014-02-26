@@ -1,9 +1,15 @@
 #include "reply.h"
+#include <stdio.h>
 #include <string>
 
-string reply::to_string(reply::status_type status)
+void reply::set_status(const status_type status)
 {
-	switch(status)
+	this->status = status;
+}
+
+string reply::status_to_string()
+{
+	switch(this->status)
 	{
 	case ok:
 		return "HTTP/1.0 200 OK\r\n";
@@ -20,35 +26,70 @@ string reply::to_string(reply::status_type status)
 	}
 }
 
-string reply::to_reply_content(reply::status_type status)
+void reply::to_reply_headers()
+{
+  this->headers.resize(2);
+  this->headers[0].name = "Content-Length";
+  char len[4] = {0};
+  sprintf(len,"%d", static_cast<int>(this->content.size()) );
+  this->headers[0].value = len; 
+  this->headers[1].name = "Content-Type";
+  this->headers[1].value = "test/html";
+}
+
+void reply::to_reply_content()
 {
 	string shead = "<html><body><h1>";
 	string stail = "</h1></body></html>";
 	switch(status)
 	{
 	case ok:
-		return "";
+		this->content =  "";
+		return;
 	case created:
-		return shead+"201 Created"+stail;
+		this->content = shead+"201 Created"+stail;
+		return;
 	case bad_request:
-		return shead+"400 Bad Request"+stail;
+		this->content = shead+"400 Bad Request"+stail;
+		return;
 	case forbidden:
-		return shead+"403 Forbidden"+stail;
+		this->content = shead+"403 Forbidden"+stail;
+		return;
 	case not_found:
-		return shead+"404 Not Found"+stail;
+		this->content = shead+"404 Not Found"+stail;
+		return;
 	default:
-		return shead+"500 Internal Server Error"+stail;
+		this->content = shead+"500 Internal Server Error"+stail;
+		return;
 	}
+}
+
+void reply::set_headers(const vector<header> headers)
+{
+	this->headers = headers;
+}
+
+void reply::set_content(const string content)
+{
+	this->content = content;
 }
 
 string reply::to_buffers()
 {
-	string re;
-	re += to_string(this->status);
+	string re = status_to_string();
+	if(this->status != ok)
+	{
+		to_reply_content();
+		to_reply_headers();
+	}
 	for(std::size_t i=0; i< this->headers.size(); ++i)
 		re += this->headers[i].name + ":" + this->headers[i].value + "\r\n";
-	//如何构造各种响应包。
 	re += this->content;
 	return re;
+}
+
+int main()
+{
+	return 0;
 }
 

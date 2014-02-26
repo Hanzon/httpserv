@@ -6,8 +6,6 @@ using namespace std;
 class reply
 {
 public:
-	string to_buffers();
-private:
 	enum status_type
 	{
 		ok = 200,
@@ -26,12 +24,21 @@ private:
 		bad_gateway = 502,
 		service_unavailable = 503
 	}status;
-	std::vector<header> headers;
-	std::string content;
+	vector<header> headers;
+	string content;
+
+	void reset();
+	string to_buffers();
+	void set_status(const status_type);
+	//functions used when the status equal 200
+	void set_headers(const vector<header> );
+	void set_content(const string );
 
 private:
-	string to_string(reply::status_type status);
-	string to_reply_content(reply::status_type status);
+	//functions used when the status unequal 200
+	string status_to_string();
+	void to_reply_headers();
+	void to_reply_content();
 };
 
 
