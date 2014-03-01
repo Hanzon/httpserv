@@ -89,6 +89,7 @@ string reply::to_buffers()
 	}
 	for(std::size_t i=0; i< this->headers.size(); ++i)
 		re += this->headers[i].name + ":" + this->headers[i].value + "\r\n";
+	re+="\r\n";
 	re += this->content;
 	return re;
 }

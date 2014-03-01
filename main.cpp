@@ -1,6 +1,7 @@
 #define SERV_PORT 8080
 #define LISTENQ 10
 
+#include "mime_types.h"
 #include "request_parser.h"
 #include "request_handler.h"
 #include <iostream>
@@ -15,6 +16,7 @@
 #include <errno.h>
 
 const unsigned int Max_packet_size = 1024;
+const string doc_root = "/home/diange/Myproject/httpserv_git/httpserv/www";
 
 ssize_t rio_readn(int fd, char *usrbuf, size_t n)
 {
@@ -130,10 +132,8 @@ int main()
 				continue;
 			if(FD_ISSET(sockfd, &rset))
 			{
-				std::cerr<<"data come!"<<endl;
 				if( (pid=fork())==0)
 				{
-					std::cerr<<"child process!"<<endl;
 					//child process
 					for(j=3; j<FD_SETSIZE; ++j)
 					{
@@ -142,22 +142,32 @@ int main()
 						close(j);
 					}
 					//read the request packet
-					ssize_t nread = -1;
-					char recvbuf[Max_packet_size];		//assume the max_packet_size is 1024 Byte
+					ssize_t nread;
+					char recvbuf[Max_packet_size];	
 					if( (nread=rio_readn(sockfd, recvbuf, Max_packet_size)) < 0)
 					{
 						close(sockfd);
 						return -1;
 					}
-					std::cout<<nread<<endl;
 					//parse request
 					request_parser reqer;
 					reqer.parse(recvbuf);
-
 					request req = reqer.getreq();
-							
 
-					close(sockfd);
+					reply rep;
+					request_handler req_handler(doc_root);
+					req_handler.produre_reply(req, rep);
+
+					string t = rep.to_buffers();
+					char* sendbuf = const_cast<char*>(t.c_str());
+					std::cout<<sendbuf<<endl;
+					std::cout.flush();
+
+					nread = rio_writen(sockfd, sendbuf, t.size());	
+					std::cout<<nread<<endl;
+					std::cout.flush();
+
+					sleep(3000);
 					return 0;
 				}
 				//parent process

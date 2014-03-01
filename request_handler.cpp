@@ -55,8 +55,8 @@ void request_handler::produre_reply(const request& req, reply& rep)
 	sprintf(len, "%d", static_cast<int>(rep.get_content().size()) );
 	headers[0].value = len;
 	headers[1].name = "Content-Type";
-	headers[1].value = extension; //Check the extension! 	
-
+	headers[1].value = maper.extension_to_type(extension); //Check the extension! 	
+	rep.set_headers(headers);
 }
 
 bool request_handler::url_decode(const string& in, string& out)

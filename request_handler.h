@@ -1,4 +1,5 @@
 #include "reply.h"
+#include "mime_types.h"
 #include <string>
 using namespace std;
 
@@ -12,5 +13,6 @@ public:
 
 private:
 	string m_docroot;
+	mapping maper;
 	static bool url_decode(const string& in, string& out);
 };
