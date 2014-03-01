@@ -1,3 +1,6 @@
+#ifndef HTTP_REQUEST_HPP
+#define HTTP_REQUEST_HPP
+
 #include <string>
 #include <vector>
 using namespace std;
@@ -15,3 +18,5 @@ struct request
 	string version;
 	vector<header> headers;
 };
+
+#endif

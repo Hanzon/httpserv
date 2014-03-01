@@ -23,18 +23,20 @@ public:
 		not_implemented = 501,
 		bad_gateway = 502,
 		service_unavailable = 503
-	}status;
-	vector<header> headers;
-	string content;
+	};
 
 	void reset();
 	string to_buffers();
 	void set_status(const status_type);
 	//functions used when the status equal 200
-	void set_headers(const vector<header> );
-	void set_content(const string );
+	void set_headers(const vector<header>& );
+	void set_content(const string& );
+	string get_content();
 
 private:
+	enum status_type status;
+	vector<header> headers;
+	string content;
 	//functions used when the status unequal 200
 	string status_to_string();
 	void to_reply_headers();

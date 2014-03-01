@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string>
 
-void reply::set_status(const status_type status)
+void reply::set_status(const reply::status_type status)
 {
 	this->status = status;
 }
@@ -64,12 +64,17 @@ void reply::to_reply_content()
 	}
 }
 
-void reply::set_headers(const vector<header> headers)
+string reply::get_content()
+{
+	return this->content;
+}
+
+void reply::set_headers(const vector<header>& headers)
 {
 	this->headers = headers;
 }
 
-void reply::set_content(const string content)
+void reply::set_content(const string& content)
 {
 	this->content = content;
 }
@@ -86,10 +91,5 @@ string reply::to_buffers()
 		re += this->headers[i].name + ":" + this->headers[i].value + "\r\n";
 	re += this->content;
 	return re;
-}
-
-int main()
-{
-	return 0;
 }
 
