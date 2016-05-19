@@ -1,2 +1,2 @@
-httpserv
+simple http server
 ========
